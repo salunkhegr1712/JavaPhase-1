@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>html forms</title>
+</head>
+<body>
+      <fieldset>
+      <form action="basic.html" method="get">
+            <label for="first name"> First Name : </label>
+            <input type="text" name="fname" id="fname" placeholder="enter first name"> <br>
+
+            <label for="first name"> Last Name :</label>
+            <input type="text" name="lname" id="lname" placeholder="enter last name"> <br>
+            <input type="submit" placeholder="submit">
+
+      </form>
+
+      </fieldset> <br> <br>
+      <!-- contact form  -->
+      <fieldset>
+
+            <form action="" >
+                  <label for="username"> username : </label>
+            <input type="text" name="username" id="username" > <br>
+
+            <label for="email"> Email :</label>
+            <input type="email" name="emailid" id="emailid" > <br>
+
+            <label for="msg"> Message:</label>
+            <textarea name="msg" id="msg" cols="30" rows="5"></textarea>
+            
+            <input type="submit" placeholder="submit">
+            
+            </form>
+      </fieldset> <br> <br>
+
+      <!-- create a select form  -->
+      <!-- such like that we are able to create a select form and it is quite helpfull in many cases  -->
+      <fieldset>
+            <form action="">
+                  <label for="branch"> what is your branch ? : </label>
+                  <select name="branch" id="branch">
+                        <option value="comp">Computer engineering</option>
+                        <option value="mech">Mechanical engineering</option>
+                        <option value="civil">Civil engineering</option>
+                        <option value="prod">Production engineering</option>
+                        <option value="meta">Metallurgy engineering</option>
+                  </select>
+                  <button type="submit">submit</button>
+            </form>
+      </fieldset>
+      
+
+</body>
+</html>
