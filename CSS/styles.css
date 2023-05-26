@@ -1,0 +1,54 @@
+
+body{
+      /* background-color: blue; */
+      /* you can use background image also  */
+      background-image: url(ghansham.png);
+      
+      /* you can manage repeatation  */
+      background-repeat: no-repeat;
+
+      /* manage position  */
+      background-position: top right;
+
+      /* you can also fis it  */
+      background-attachment: fixed;
+}
+
+/* tag itself as selcector  */
+h1{
+      color: purple;
+}
+
+/* id as selector using # (hash) operator  */
+#grs{
+      color: green;
+}
+
+/* class as selector using . (dot) operator */
+.sham{
+      color:magenta
+}
+
+
+
+/* this effect will applied as it is latest one  */
+.yes{
+      color: yellow;
+}
+
+/* different color convection  */
+
+.green1{
+      color: green;
+}
+.green2{
+      color: #00ff00;
+}
+.green3{
+      color: rgb(0, 255,0);
+}
+.green4{
+      color: rgba(0, 255, 0, 1);
+      /* a is alpha manages saturation value 1 is max 0 is min */
+}
+

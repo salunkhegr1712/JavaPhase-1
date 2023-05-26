@@ -1,0 +1,46 @@
+body{
+      background-color: #3c3176;
+      color: white;
+}
+
+.container {
+      display: grid;
+      align-items: center; 
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 5px;
+}
+h1{
+      text-align: center;
+}
+h2{
+      color: #10073B;
+}
+.head{
+      background-color: black;
+      
+
+}
+li{
+
+      display: inline-block;
+      padding: 4px;
+      background-color: #3c3176;
+}
+
+.top{
+      background-color: grey;
+      border: 10px dotted black;
+      margin-top: 20px;
+      margin-bottom: 20px;
+}
+
+img {
+      max-width: 100px;
+      
+      float: right;
+    }
+
+
+footer{
+      background-color: black;
+}

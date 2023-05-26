@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            div{
+                  width: 100px;
+                  height: 100px;
+                  border: 1px solid black;
+                  margin: 5 px;
+            }
+
+            /* block one is static  */
+            .block1{
+                  position: static;
+                  background-color: aqua;
+            }
+            .block2{
+                  position: absolute;
+                  left: 150px;
+                  right: 150px;
+                  background-color: blanchedalmond;
+            }
+            .block3{
+                  position: relative;
+                  left: 100px;
+                  top: 100px;
+            }
+            .block4{
+                  position: sticky;
+                  top :200px;
+                  left: 200px;
+                  background-color: green;
+            }
+      </style>
+</head>
+<body>
+      <div class="block1">block 1</div>
+      <div class="block2">block 2</div>
+      <div class="block3">block 3</div>
+      <div class="block4">block 4</div>
+</body>
+</html>
