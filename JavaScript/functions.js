@@ -68,3 +68,18 @@ function hello3(){
       console.log(m.innerText)
       c3++
 }
+
+// also we can able to declare function with different type 
+
+var abc=function(){
+      return 10+9
+}
+
+console.log(abc()) //19
+
+// also we can do 
+var mpt=()=>{
+      return 10+20
+}
+
+console.log(mpt()) //30 
