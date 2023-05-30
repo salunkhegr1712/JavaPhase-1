@@ -1,0 +1,91 @@
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Another event listeners</title>
+</head>
+
+<body>
+      <input type="text" name="ttt" id="ttt" placeholder="insert text here"> <br> <br>
+      <input type="text" name="kkk" id="kkk" placeholder="you can write here">
+
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+      <script>
+            m = ""
+            $(document).ready(function () {
+
+                  // for keypress event 
+                  $("#ttt").keypress(function ($event) {
+                        if (event.keyCode == 13) {
+                              return;
+                        }
+                        console.log("from keypress event");
+
+                        // console.log(this.value)
+                  })
+
+                  // for keydown event 
+                  $("#ttt").keydown(function ($event) {
+                        if (event.keyCode == 13) {
+                              return;
+                        }
+                        console.log("from keydown event");
+
+                        // console.log(this.value)
+                  })
+
+                  // for keyup event 
+                  $("#ttt").keyup(function ($event) {
+                        if (event.keyCode == 13) {
+                              return;
+                        }
+                        console.log("from keyup event");
+
+                        // console.log(this.value)
+                  })
+                  // order of event happening 
+                  // from keydown event
+                  // from keypress event
+                  // from keyup event
+
+                  // same eventslistener with the help of on keyword
+                  // we can create any event listener on top on keyword inside the javascript 
+                  $("#kkk").on("keydown",function ($event) {
+                        if (event.keyCode == 13) {
+                              return;
+                        }
+                        console.log("from keydown and {on} event listeners");
+
+                        // console.log(this.value)
+                  })
+                  $("#kkk").on("keypress",function ($event) {
+                        if (event.keyCode == 13) {
+                              return;
+                        }
+                        console.log("from keypress and {on} event listeners");
+
+                        // console.log(this.value)
+                  })
+                  $("#kkk").on("keyup",function ($event) {
+                        if (event.keyCode == 13) {
+                              return;
+                        }
+                        console.log("from from keyup and {on} event listeners");
+
+                        // console.log(this.value)
+                  })
+
+                  // output 
+                  // from keydown and {on} event listeners
+                  // from keypress and {on} event listeners
+                  // from from keyup and {on} event listeners
+            })
+
+      </script>
+</body>
+
+</html>
