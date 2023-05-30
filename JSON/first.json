@@ -1,0 +1,27 @@
+{
+      "firstname": "john",
+      "lastname": "smith",
+      "age": 25,
+      "address":
+            {
+                  "streetAddress": "blah blah blah blah",
+                  "city": "new york",
+                  "state": "new york",
+                  "postalcode": 10021
+            }
+      ,
+      "phoneNumber": [
+            {
+                  "type": "home",
+                  "number": 21255512345
+            },
+            {
+                  "type": "fax",
+                  "number": 646555456978
+            }
+      ],
+      "gender": {
+                  "type": "male"
+                  }
+      
+}

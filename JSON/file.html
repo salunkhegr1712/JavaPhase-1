@@ -1,0 +1,112 @@
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Printing Name</title>
+</head>
+
+<body>
+      <div id="welcome">
+
+      </div>
+      <script>
+            var client = {}
+
+            // taking the input with the help of the prompt and it also usefull 
+            // client.fname=prompt("what is your first name : ")
+            // client.lname=prompt("what is your last name : ")
+
+            client.fname = "ghansham"
+            client.lname = "salunkhe"
+
+            function insertValue2(val) {
+                  // now create element and put it in div 
+                  temp = document.createElement("h1")
+                  temp.innerText = val.name + " " + val.edu + " " + val.age
+                  // now append it to the div 
+                  main = document.querySelector("#welcome")
+                  main.appendChild(temp)
+            }
+            function insertValue1(val) {
+                  // now create element and put it in div 
+                  temp = document.createElement("h1")
+                  temp.innerText = val
+                  // now append it to the div 
+                  main = document.querySelector("#welcome")
+                  main.appendChild(temp)
+            }
+            // lets create array inside a object 
+            var z = {
+                  color: ["red", "green", "yellow", "grey", "pink"]
+            }
+            // console command 
+            // z.color.forEach(function(val){console.log(val)})
+            // red
+            // green
+            // yellow
+            // grey
+            // pink
+
+            // create a array for object data 
+            let people = [
+                  { "name": "ghansham", "edu": "graduate", "age": 21 },
+                  { "name": "abhi", "edu": "graduate", "age": 23 },
+                  { "name": "yash", "edu": "graduate", "age": 22 },
+                  { "name": "nikhil", "edu": "graduate", "age": 20 },
+                  { "name": "adesh", "edu": "graduate", "age": 22 },
+                  { "name": "vijay", "edu": "graduate", "age": 22 },
+
+            ]
+
+            // console command 
+            // people.forEach(function(val){console.log(val)})
+            //  {name: 'ghansham', edu: 'graduate', age: 21}
+            //  {name: 'abhi', edu: 'graduate', age: 23}
+            //  {name: 'yash', edu: 'graduate', age: 22}
+            //  {name: 'nikhil', edu: 'graduate', age: 20}
+            //  {name: 'adesh', edu: 'graduate', age: 22}
+            //  {name: 'vijay', edu: 'graduate', age: 22}
+
+            // for(let i in people){console.log(people[i])}
+            // for (let i in people) {
+            //       for (let j in people[i]) {
+            //             insertValue1(people[i][j])
+            //       }
+            // }
+
+            let another = {
+                  people1: [
+                        { "name": "ghansham", "edu": "graduate", "age": 21 },
+                        { "name": "abhi", "edu": "graduate", "age": 23 },
+                        { "name": "yash", "edu": "graduate", "age": 22 },
+                        { "name": "nikhil", "edu": "graduate", "age": 20 },
+                        { "name": "adesh", "edu": "graduate", "age": 22 },
+                        { "name": "vijay", "edu": "graduate", "age": 22 },
+                  ],
+                  people2: [
+                        { "name": "ghansham", "edu": "graduate", "age": 21 },
+                        { "name": "abhi", "edu": "graduate", "age": 23 },
+                        { "name": "yash", "edu": "graduate", "age": 22 },
+                        { "name": "nikhil", "edu": "graduate", "age": 20 },
+                        { "name": "adesh", "edu": "graduate", "age": 22 },
+                        { "name": "vijay", "edu": "graduate", "age": 22 },
+                  ]
+            }
+            for (let i in another) {
+                  for (let j in another[i]) {
+                        for (let k in another[i][j]) {
+                              insertValue1(another[i][j][k])
+                        }
+                  }
+            }
+
+            // pushing value inside object 
+            let t={"name": "hero", "edu": "fail", "age": 90 }
+            people.push(t)
+            another.people1.push(t)
+      </script>
+</body>
+
+</html>

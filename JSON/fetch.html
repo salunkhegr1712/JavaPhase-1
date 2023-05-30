@@ -1,0 +1,53 @@
+<!-- in this code we will fetch api and display result in html  -->
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Fetch API</title>
+</head>
+
+<body>
+      <div id="ghansham">
+
+      </div>
+      <script>
+            const url = "https://randomuser.me/api"
+            data=""
+            fetch(url).then(function (responce) {
+
+                  // this is important 
+                  return responce.json();
+
+            }).then(function (data) {
+                  // console.log(data.results[0])
+                  // temp = document.createElement("p")
+                  // temp.innerText = JSON.stringify(data.results[0])
+
+                  // get div 
+                  // parent = document.querySelector("#ghansham")
+                  // parent.appendChild(temp)
+
+                  // so as we can see there are multiple responce so in order to deal with them
+                  // lets use forach loop 
+                  data.results.forEach(element => {
+                        temp = document.createElement("p")
+                        temp.innerText = JSON.stringify(element)
+
+                        // get div 
+                        parent = document.querySelector("#ghansham")
+                        parent.appendChild(temp)
+                  });
+
+            // after that catch error if any and print it 
+            }).catch(function(err){
+                  console.log(err);
+            })
+
+
+
+      </script>
+</body>
+
+</html>
