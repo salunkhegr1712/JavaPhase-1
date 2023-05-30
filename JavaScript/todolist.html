@@ -1,0 +1,101 @@
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>To Do list</title>
+      <style>
+            .grs {
+                  width: 30%;
+                  margin: auto;
+            }
+            .ghan{
+                  background-color: red;
+                  color: green;
+                  text-decoration: line-through;
+            }
+      </style>
+</head>
+
+<body>
+      <div class="grs">
+            <h1 class="date"></h1>
+            <ul>
+                  
+            </ul>
+            <input type="text" name="task" id="task" placeholder="press enter to put value" style="width: 100%; margin: auto;"> 
+            
+      </div>
+      
+
+      <script>
+            // first we will write function which will give us date 
+            function date(){
+                  let s=new Date()
+                  dd=s.getDate()
+                  mm=s.getMonth()
+                  yy=s.getFullYear()
+
+                  ll=document.querySelector(".date")
+                  ll.innerText="Tasks : " +dd+" / "+mm+" / "+yy
+            }
+            date()
+
+            
+            ip=document.querySelector("#task")
+            
+            ip.addEventListener("keypress",function(event){
+                  if(ip.value==="" && event.keyCode===13 ){
+                  return
+                  }
+                  else if(ip.value!="" && event.keyCode==13){
+                  m=document.querySelector("ul")
+                  temp=document.createElement("li")
+                  temp.innerText=ip.value
+                  ip.value=""
+
+                  m.appendChild(temp)
+
+                  temp.addEventListener("click",function(){
+                        
+                        m=this.classList.toggle("ghan")
+                        if(m){
+                              span=document.createElement("span")
+                              span.classList.add("btt")
+                              span.innerText=" X "
+                              this.appendChild(span)
+                              span.addEventListener("click",function(){
+                              parent.removeChild(this.parentElement)
+
+                        })
+                        }
+                        else{
+                              kl=document.querySelector(".btt")
+                              this.removeChild(kl)
+                        }
+                              parent=this.parentElement
+                        })
+                  }
+            })
+
+             // lets add event listener to it 
+             z.addEventListener("keypress", function ($event) {
+                  // event will give info about event 
+                  console.log(event);
+                  console.log(event.key);
+
+                  // this will give info abput on which Element event is invoked 
+                  console.log(this)
+                  if (event.keyCode === 13) {
+                        let k = document.querySelector(".maintext")
+                        k.innerHTML = z.value
+                        z.value = ""
+                  }
+
+            })
+
+      </script>
+</body>
+
+</html>

@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -6,30 +7,42 @@
       <title>list using DOM</title>
 
       <style>
-            .ghansham{
+            .ghansham {
                   text-decoration: line-through;
                   background-color: red;
                   color: green;
             }
-            th,td{
+
+            th,
+            td {
                   border: 2px solid black;
             }
-            th{
+
+            th {
                   background-color: red;
                   color: white;
                   width: 100px;
             }
-            tr:nth-child(){
+
+            tr:nth-child() {
                   background-color: red;
                   color: white;
 
             }
-            table,ul{
+
+            table,
+            ul {
                   width: 40%;
                   margin: auto;
             }
+
+            .bts {
+                  background-color: burlywood;
+                  color: black;
+            }
       </style>
 </head>
+
 <body>
       <ul>
             <li>text 1</li>
@@ -62,22 +75,87 @@
                   </tr>
 
             </tbody>
-      </table>
+      </table> <br> <br>
+      <div id="evenodd">
 
+            <input type="number" name="sham" id="sham">
+            <button id="btn"> click me</button>
+      </div>
+            <br><br>
+            <div class="maintext"
+                  style="margin: auto; width:70% ; background-color:  #E36C79; color: aliceblue; align-content: center;">
 
+            LOREM IPSUM GENERATOR
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum.
+      </div> <br> <br>
+
+      <!-- now lets create a input tag  -->
+      <input type="text" name="gha" id="gha" style="margin: auto; ;">
       <script>
             // lets write the java code here 
-            a=document.querySelectorAll("li")
+            a = document.querySelectorAll("li")
             // now use for each loop to ADD EVENT LISTENER TO EACH OF IT 
-            for(let i=0;i<a.length;i++){
+            for (let i = 0; i < a.length; i++) {
                   // console.log(a[i])
 
-                  a[i].addEventListener("click",function($event){
+                  a[i].addEventListener("click", function ($event) {
                         console.log(this)
                         this.classList.toggle("ghansham")
                         console.log(event)
                   })
+                  a[i].addEventListener("mouseover", function () {
+                        console.log(this)
+                        this.classList.add("bts")
+                  })
+                  a[i].addEventListener("mouseout", function () {
+                        console.log(this)
+                        this.classList.remove("bts")
+                  })
             }
-      </script>   
+
+            // now lets add a event listener to the input 
+            let z = document.querySelector("input[name='gha']")
+            console.log(z)
+
+            // lets add event listener to it 
+            z.addEventListener("keypress", function ($event) {
+                  // event will give info about event 
+                  console.log(event);
+                  console.log(event.key);
+
+                  // this will give info abput on which Element event is invoked 
+                  console.log(this)
+                  if (event.keyCode === 13) {
+                        let k = document.querySelector(".maintext")
+                        k.innerHTML = z.value
+                        z.value = ""
+                  }
+
+            })
+
+            kk=document.querySelector("#btn")
+            mm=document.querySelector("#sham")
+            ll=document.querySelector("#evenodd")
+            let i=0
+            kk.addEventListener("click",function(){
+                  console.log(kk)
+                  console.log(mm.value)
+                  let zz=document.createElement("h1")
+
+                  if(mm.value%2===0){
+                        zz.innerText="even number"
+                  }
+                  else{
+                        zz.innerText="odd number" 
+                  }
+                  ll.appendChild(zz)
+            })
+      </script>
 </body>
+
 </html>
