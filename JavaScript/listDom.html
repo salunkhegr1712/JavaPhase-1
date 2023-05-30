@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>list using DOM</title>
+
+      <style>
+            .ghansham{
+                  text-decoration: line-through;
+                  background-color: red;
+                  color: green;
+            }
+            th,td{
+                  border: 2px solid black;
+            }
+            th{
+                  background-color: red;
+                  color: white;
+                  width: 100px;
+            }
+            tr:nth-child(){
+                  background-color: red;
+                  color: white;
+
+            }
+            table,ul{
+                  width: 40%;
+                  margin: auto;
+            }
+      </style>
+</head>
+<body>
+      <ul>
+            <li>text 1</li>
+            <li>text 2</li>
+            <li>text 3</li>
+            <li>text 4</li>
+      </ul>
+
+      <table>
+            <thead>
+                  <th>FName</th>
+                  <th>LName</th>
+                  <th>age</th>
+            </thead>
+            <tbody>
+                  <tr>
+                        <td>ghansham</td>
+                        <td>salunkhe</td>
+                        <td>21</td>
+                  </tr>
+                  <tr>
+                        <td>ghansham</td>
+                        <td>salunkhe</td>
+                        <td>21</td>
+                  </tr>
+                  <tr>
+                        <td>ghansham</td>
+                        <td>salunkhe</td>
+                        <td>21</td>
+                  </tr>
+
+            </tbody>
+      </table>
+
+
+      <script>
+            // lets write the java code here 
+            a=document.querySelectorAll("li")
+            // now use for each loop to ADD EVENT LISTENER TO EACH OF IT 
+            for(let i=0;i<a.length;i++){
+                  // console.log(a[i])
+
+                  a[i].addEventListener("click",function($event){
+                        console.log(this)
+                        this.classList.toggle("ghansham")
+                        console.log(event)
+                  })
+            }
+      </script>   
+</body>
+</html>
