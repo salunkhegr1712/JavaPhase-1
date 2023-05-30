@@ -13,7 +13,8 @@
 
       </div>
       <script>
-            const url = "https://randomuser.me/api"
+            let m=""
+            const url = "https://randomuser.me/api?results=5"
             data=""
             fetch(url).then(function (responce) {
 
@@ -21,6 +22,7 @@
                   return responce.json();
 
             }).then(function (data) {
+                  m=data
                   // console.log(data.results[0])
                   // temp = document.createElement("p")
                   // temp.innerText = JSON.stringify(data.results[0])
@@ -32,12 +34,14 @@
                   // so as we can see there are multiple responce so in order to deal with them
                   // lets use forach loop 
                   data.results.forEach(element => {
-                        temp = document.createElement("p")
-                        temp.innerText = JSON.stringify(element)
-
+                        let d=document.createElement("img")
+                        let dd=document.createElement("h1")
+                        d.setAttribute("src",element.picture.thumbnail)
+                        dd.innerHTML="<br>"+element.name.first +" "+element.name.last +"<br>"
                         // get div 
                         parent = document.querySelector("#ghansham")
-                        parent.appendChild(temp)
+                        parent.appendChild(d)
+                        parent.appendChild(dd)
                   });
 
             // after that catch error if any and print it 
