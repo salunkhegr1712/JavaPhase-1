@@ -1,0 +1,145 @@
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>JQuery Effects</title>
+</head>
+
+<body>
+      <!-- for basic show hide and toggle  -->
+      <div style="margin: auto; width: 15%; background-color: aquamarine;">
+            <!-- lets add three h1  -->
+            <h1 id="first">#H1</h1>
+            <h1 id="second">#H2</h1>
+            <h1 id="third">#H3</h1>
+
+            <!-- now add three buttons  -->
+            <button id="bt">H1 click</button> &nbsp;&nbsp;
+            <button id="btt">H2 click</button> &nbsp;&nbsp;
+            <button id="bttt">H3 click</button>
+      </div>
+
+      <!-- for fade in out toggle  -->
+      <div style="margin: auto; width: 15%; background-color: antiquewhite;">
+            <!-- lets add three h1  -->
+            
+            <h1 id="fourth">#H4 </h1>
+
+            <!-- now add three buttons  -->
+            <button id="pt">H4 click1</button> &nbsp;&nbsp;
+            <button id="ptt">H4 click2</button> &nbsp;&nbsp;
+            <button id="pttt">H4 click3</button>
+            <button id="ptttt">H4 click4</button>
+      </div>
+
+      <!-- for slide animations -->
+      <!-- for fade in out toggle  -->
+      <div style="margin: auto; width: 15%; background-color: lightgray;">
+            <!-- lets add three h1  -->
+            
+            <h1 id="fifth">#H5 </h1>
+
+            <!-- now add three buttons  -->
+            <button id="kt">H5 click1</button> &nbsp;&nbsp;
+            <button id="ktt">H5 click2</button> &nbsp;&nbsp;
+            <button id="kttt">H5 click3</button>
+            
+      </div>
+
+      <!-- now add JQuery script here  -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+      <!-- and write scrip here  -->
+      <script>
+            // let dom be preapared 
+            $(document).ready(function(){
+                  console.log("dom is preapared")
+
+                  // now lets add event listerner to buttion and manipulate h1 
+                  $("#bt").on("click",function(){
+                        // one first buttion we will change the  h1
+                        $("#first").show()
+                  })
+
+                  $("#btt").on("click",function(){
+                        // one first buttion we will change the  h1
+                        $("#second").hide()
+                  })
+
+                  $("#bttt").on("click",function(){
+                        // one first buttion we will change the  h1
+                        $("#third").toggle()
+                  })
+
+                  // for second button lets do click over h1 or h3 so that h2 will comeback 
+                  $("#first").on("click",function(){
+                        // one first buttion we will change the  h1
+                        $("#second").show()
+                  })
+
+                  $("#third").on("click",function(){
+                        // one first buttion we will change the  h1
+                        $("#second").show()
+                  })
+
+                  // now lets see for the fade effects 
+
+                  // apply fade in 
+                  // we can also do some functions after fadingin out or toggle 
+                  $("#pt").on("click",function(){
+                        console.log("fadeIn : button clicked")
+                        $("#fourth").fadeIn(3000,function(){
+                              console.log("fadeIn : completed {inside function of fadeIn}");
+                        })
+                  })
+
+                  // fade out function 
+                  // fade out and fade in effect 
+                  $("#ptt").on("click",function(){
+                        console.log("fadeOut : button clicked")
+                        $("#fourth").fadeOut(1000,function(){
+                              console.log("fadeOut : completed {inside function of fadeOut}");
+                              $("#fourth").fadeIn(1000)
+                        })
+                        })
+                  })
+                  $("#pttt").on("click",function(){
+                        console.log("fadeToggle : button clicked")
+                        $("#fourth").fadeToggle("slow",function(){
+                              console.log("fadeToggle : completed {inside function of fadeToggle}");
+                        })
+                  })
+
+                  // also we can adjust opacity  for it fadeTo function is used
+                  $("#ptttt").on("click",function(){
+                        console.log("fadeTO : button clicked")
+                        $("#fourth").fadeTo("slow",.1)
+                  })
+
+                  // lets apply slide function you can pass time as parameter and also able 
+                  // to create a function regarding it (a follow up function)
+
+                  $("#kt").on("click",function(){
+                        // one first buttion we will change the  h1
+                        $("#fifth").slideUp()
+                  })
+
+                  $("#ktt").on("click",function(){
+                        // one first buttion we will change the  h1
+                        $("#fifth").slideDown()
+                  })
+
+                  $("#kttt").on("click",function(){
+                        // one first buttion we will change the  h1
+                        $("#fifth").slideToggle(1000,function(e){
+                              console.log(event);
+                              console.log("slide toggle take place");
+                        })
+                  })
+
+      </script>
+</body>
+
+</html>
