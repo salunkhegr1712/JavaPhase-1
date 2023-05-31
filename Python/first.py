@@ -19,3 +19,10 @@ else:
       
 d["sham"]=8696
 print("added new : ",d)
+
+# a[-1::-1] to reverse a string
+
+if "abc" in "abscdefgh":
+      print("yes")
+      exit(0)
+print("no")
