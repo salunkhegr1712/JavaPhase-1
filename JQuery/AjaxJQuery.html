@@ -1,10 +1,12 @@
 <html lang="en">
+
 <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Ajax and JQuery</title>
 </head>
+
 <body>
       <div style="margin: auto; width: 15%; background-color: antiquewhite;">
             <h1 id="hh">raw text</h1>
@@ -12,8 +14,18 @@
             <button id="bt">load another file</button>
       </div>
 
-      <div id="di" style="margin: auto; width: 15%; background-color: cornflowerblue;">
-            <h1>new content</h1>
+      <div id="sss" style="margin: auto; width: 30%; background-color: cornflowerblue;">
+            <br>
+            
+            <form id="data"action="#" method="post">
+                  &nbsp;&nbsp;&nbsp;
+            
+                  <input type="text" name="fname" id="fname" placeholder="enter your name">
+                  <input type="text" name="email" id="email" placeholder="enter your email">
+                  <button type="submit">submit</button>
+            </form>
+            <br>
+
       </div>
 
       <!-- lets add JQuery here  -->
@@ -21,23 +33,24 @@
       <script>
 
             // now after clicking button h1 content should change with ajax 
-            $("#btn").on("click",function(){
-                  $.get("http://127.0.0.1:5500/JQuery/new.json",function(responce){
-                  console.log(responce.course);
-                  // now change h1 with this 
-                  $("#hh").text(responce.course)
+            $("#btn").on("click", function () {
+                  $.get("http://127.0.0.1:5500/JQuery/new.json", function (responce) {
+                        console.log(responce.course);
+                        // now change h1 with this 
+                        $("#hh").text(responce.course)
+                  })
             })
-            })
-            
+
             // now as we done tith api and get from ajax lets go to load 
             // you cant acces local file but run webserver and you can get http location for file 
 
             // on clicking second button we will load another html file inside our own file 
-            $("#bt").click(function(){
+            $("#bt").click(function () {
                   $("di").load("/effectsJQuery.html")
-                  
+
             })
-            
+
       </script>
 </body>
+
 </html>
