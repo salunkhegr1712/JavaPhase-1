@@ -1,0 +1,59 @@
+<p>attribute-binding works!</p>
+
+<div>
+      <table>
+            <tr>
+                  <td [attr.rowspan]="3" [colSpan]="2">one</td>
+            </tr>
+            <tr>
+                  <td [colSpan]="2">one</td>
+            </tr>
+            <tr>
+                  <td [colSpan]="2">one</td>
+            </tr>
+            <tr>
+                  <td>hell</td>
+                  <td>one</td>
+            </tr>
+      </table>
+
+      setup area-label for button 
+      
+
+</div>
+
+<!-- so we want to toggle the class using css property  -->
+<div class="hell" [class]="'class2'" [class.cssClassToggle]="true" [class.enlarge]="val" ngClass="class2 hell ">
+      hello world
+      <!-- we can also use [style.property] to bind the style and some value  -->
+      <p [style.color]="'red'">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam laboriosam modi vel 
+            illo ullam cumque autem? Accusamus quibusdam fugiat quo,
+            voluptates omnis harum, excepturi corporis dicta quos non aperiam repellendus.
+      </p>
+
+      <!-- this button will enlarge and reduce the size of text  -->
+      <button (click)="mod()">hello btn</button>
+</div>
+
+
+we use the dot operator to provide styling using [style]
+
+<div [style.backgroundColor]="'red'" [style.color]="'green'"
+      [ngClass]="{'hell':true,'class2':false}"
+      [ngStyle]="{'border':'14px solid purple','width':'80%'}"
+>
+     
+      <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam laboriosam modi vel 
+            illo ullam cumque autem? Accusamus quibusdam fugiat quo,
+            voluptates omnis harum, excepturi corporis dicta quos non aperiam repellendus.
+      </p>
+
+      <ul>
+            <li>hello fbidfw</li>
+            <li>hello fbidfw</li>
+            <li>hello fbidfw</li>
+            <li>hello fbidfw</li>
+      </ul>
+</div>

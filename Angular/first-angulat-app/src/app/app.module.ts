@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EventBindingComponent } from './components/event-binding/event-binding.component';
 import { InputOutputComponent } from './components/input-output/input-output.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { StudentsComponent } from './components/students/students.component';
+import { AttributeBindingComponent } from './components/attribute-binding/attribute-binding.component';
 
 
 @NgModule({
@@ -16,7 +18,7 @@ import { CounterComponent } from './components/counter/counter.component';
     AppComponent,
     GhanshamComponent,
     UserComponent,
-    EventBindingComponent,InputOutputComponent, CounterComponent
+    EventBindingComponent,InputOutputComponent, CounterComponent, StudentsComponent, AttributeBindingComponent
   ],
   imports: [
     BrowserModule,

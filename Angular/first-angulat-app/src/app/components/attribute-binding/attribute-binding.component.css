@@ -1,0 +1,17 @@
+.hell{
+      width: 40%;
+      margin: auto;
+      height: 20%;
+      background-color: green;
+      padding: 5%;
+}
+.class2{
+      width: 60%;
+      margin: auto;
+      height: 30%;
+      background-color: yellow;
+      padding: 10%;
+}
+.enlarge{
+      font-size: 40px;
+}
