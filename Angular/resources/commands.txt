@@ -1,0 +1,32 @@
+
+
+1) to create a module inside angular use command 
+
+  ---> ng generate module name-of-module 
+
+  folder will get created inside project->src->app 
+  and file name willl be : name-of-module.module.ts
+
+
+2) to create a service you also you can use following command
+  that will create a service in user folder and service name will be user
+
+  ---> ng generate service user/user
+
+  angular not automatically create folder for service or class which it does for 
+  components so you have to use these values extensivley
+
+
+3) create a class it also do not create folder automatically
+
+  ---> ng generate cl folder/nameofclass
+
+
+4) creating class is rather easy
+
+  ---> ng generate c folder/componentName
+
+
+5) creating directive 
+
+  --> ng generate d folder/component

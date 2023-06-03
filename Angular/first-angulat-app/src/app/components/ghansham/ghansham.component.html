@@ -1,0 +1,43 @@
+<h2>
+      this is template which get injected inside ghansham component
+
+</h2>
+
+
+# passing the string interpolation as string <br>
+lets call some properties : <br>
+{{m}}
+<br> <br>
+lets also also call a function : <br>
+<!-- {{abc(100)}} <br> -->
+
+# lets add string interpolation as the attribute
+<!-- <p innerHTML="{{abc(100)}}"></p> -->
+
+<h2>{{"hello world how are you doing"}}</h2>
+
+<!-- lets see can we write function -->
+<p>let see can we write function inside string interpolation or not <br>
+      
+</p>
+
+<ul>
+      <li *ngFor="let i in z"> value is : {{i}}</li>
+</ul>
+
+now lets use some property bindings : <br>
+<img [src]="source" alt="ghansham-image"> <br>
+
+also lets grab some paragraph also : <br>
+<p [innerText]="text"></p>
+
+<!-- lets try to used function -->
+
+<!-- <p [innerHTML]="abc(1000)"></p> -->
+
+lets try to see expression :
+<p [innerText]="10+20*(30*2)"></p>
+<h1>msg from parent is : {{msg}}</h1>
+<h1>array received from parent : {{arr}}</h1>
+
+

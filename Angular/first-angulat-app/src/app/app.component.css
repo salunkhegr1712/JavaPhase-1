@@ -1,0 +1,13 @@
+.style{
+      width: 40%;
+      margin: auto;
+      border: 4px black dotted ;
+      padding: 4%;
+      font-size: 15px;
+}
+.red{
+      color: red;
+}
+.green{
+      color: green;
+}

@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CoreComponent } from './core.component';
+import { GhanshamComponent } from 'src/app/ghansham/ghansham.component';
+
+
 
 @NgModule({
-  declarations: [
-    
-  ],
+  declarations: [GhanshamComponent],
   imports: [
     CommonModule
-  ],
-  exports:[
-    
   ]
 })
-export class CoreModule { }
+export class HekkModule { }

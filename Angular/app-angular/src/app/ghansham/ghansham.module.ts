@@ -9,7 +9,7 @@ import { PipePipe } from './pipe.pipe';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,CoreComponent,PipePipe
+    CommonModule
   ],
   exports:[
     // CoreModule
