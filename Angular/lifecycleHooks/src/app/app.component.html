@@ -1,0 +1,14 @@
+<!-- <app-note-list> -->
+  <!--  -->
+<!-- </app-note-list> -->
+<!--  -->
+
+<app-sham>
+  <!-- lets use template variable  -->
+  <app-sham-msg #template [message]="text"></app-sham-msg>
+  <app-sham-msg [message]="text"></app-sham-msg>
+  <app-sham-msg [message]="text"></app-sham-msg>
+  <app-sham-msg [message]="text"></app-sham-msg>
+</app-sham>
+
+<!-- so the content inside app-sham can only accessed by sham using ng-content  -->

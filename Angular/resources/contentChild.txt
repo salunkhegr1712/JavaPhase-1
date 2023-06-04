@@ -119,3 +119,30 @@ OUTPUT of contentchildren is querylist so we have to convert into array
       }
 
 }
+
+you can also use template that is id usinfg #name
+
+file app.components.html
+{
+      <app-sham>
+      <app-sham-msg #template [message]="text"></app-sham-msg>
+      <app-sham-msg [message]="text"></app-sham-msg>
+      <app-sham-msg [message]="text"></app-sham-msg>
+      <app-sham-msg [message]="text"></app-sham-msg>
+      </app-sham>
+
+}
+
+and we can directly grab it inside our sham.components.ts file 
+{
+      // using template variable 
+      // lets access the template variable 
+      @ContentChild("template") grs:any
+
+      // so as parent sending some value let us put some value 
+      // we can only change the value inside the child inside the ngafterviewinit function
+      ngAfterViewInit(): void {
+      
+      this.grs.message="changes value using template using contentchild "
+      }
+}
