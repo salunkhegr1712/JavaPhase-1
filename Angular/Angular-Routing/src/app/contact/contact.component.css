@@ -1,0 +1,8 @@
+.container{
+      padding: 2%;
+      width: 50%;
+      margin: auto;
+}
+h2,h5,h1,h4,p,h3{
+      text-align: center;
+}

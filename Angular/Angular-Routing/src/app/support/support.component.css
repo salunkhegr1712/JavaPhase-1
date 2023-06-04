@@ -1,0 +1,25 @@
+.container{
+      padding: 4%;
+      width: 50%;
+      margin: auto;
+}
+img{
+      border-radius: 60%;
+      align-items: center;
+}
+
+h2,h1,h4,p,h3{
+      text-align: center;
+}
+
+.bt{
+      margin: auto;
+      width: 50%;
+}
+
+.contact{
+      width: 50%;
+      margin: auto;
+      text-align: center;
+}
+
