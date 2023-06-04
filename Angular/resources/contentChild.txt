@@ -1,0 +1,121 @@
+you have 3 components 
+<app-root>  ==> appComponent
+<app-sham> ==> shamComponent
+<app-sham-msg> ==> shamMsgComponent
+
+
+in app.components.html we pass some content inside <app-sham> tags so we can access them inside
+sham.components.html using tags <ng-content></ng-content>
+
+the value of text in app.components.ts is "hello i am ghansham"
+
+file app.components.html
+{
+      <app-sham>
+      <app-sham-msg [message]="text"></app-sham-msg>
+      <app-sham-msg [message]="text"></app-sham-msg>
+      <app-sham-msg [message]="text"></app-sham-msg>
+      <app-sham-msg [message]="text"></app-sham-msg>
+      </app-sham>
+
+}
+
+we can accces them in sham.components.html
+{
+      <ng-content></ng-content>
+}
+
+so its act like  file : sham.components.html in a indirect way so at such cases we have to use
+content child and content children 
+## imaginary
+{
+      <app-sham-msg [message]="text"></app-sham-msg>
+      <app-sham-msg [message]="text"></app-sham-msg>
+      <app-sham-msg [message]="text"></app-sham-msg>
+      <app-sham-msg [message]="text"></app-sham-msg>
+
+}
+
+
+in sham-msg.components.ts we are handled input  
+{
+      export class ShamMsgComponent {
+            @Input() message:any;
+
+      }
+}
+
+and we also projecting html in sham-msg.components.html file 
+{
+      <h1>
+
+      {{message}}
+      </h1>
+}
+
+
+IMP ==> so as we are getting data from app to sham-msg indirectly so in order to manipulate its
+we can capture it with content child and child inside sham.components.ts and manage it 
+
+IMP ==> whenever we use <ng-content> inside sham.components.ts  and has some another components tags 
+at such time we can use content child 
+
+IMP ==> to make chnages we have to use ngAfterViewInit() function
+
+file : sham.components.ts
+
+lets first use contentchild function
+
+{
+      export class ShamComponent  {
+
+      // lets handle content child here
+      @ContentChild(ShamMsgComponent) contentone:any;
+      
+      // code for contentchild manipulation 
+      this.contentone.message="changes value using content child inside ngAfterViewInit inside sham.Component.ts "
+      
+      OUTPUT :
+      // changes value using content child inside ngAfterViewInit inside sham.Component.ts
+      // hello i am ghansham
+      // hello i am ghansham
+      // hello i am ghansham
+
+      }
+
+}
+
+
+// code after using contentchildren in file sham.components.ts 
+
+OUTPUT of contentchildren is querylist so we have to convert into array
+{
+
+      export class ShamComponent  {
+
+            // lets handle content child here
+            @ContentChild(ShamMsgComponent) contentone:any;
+
+            //code for contentchildren
+            @ContentChildren(ShamMsgComponent) contentAll:any;
+            klpd:any
+
+            // function
+            ngAfterViewInit(): void {
+
+            // convert QueryList to Array 
+            this.klpd=this.contentAll.toArray()
+
+            for(let i=0;i<this.klpd.length;i++){
+                  this.klpd[i].message=i+"th and value is changed using ContentChildren from ngafterviewint() inside the sham.Component.ts"
+            }
+
+            // output :
+            // 0th and value is changed using ContentChildren from ngafterviewint() inside the sham.Component.ts
+            // 1th and value is changed using ContentChildren from ngafterviewint() inside the sham.Component.ts
+            // 2th and value is changed using ContentChildren from ngafterviewint() inside the sham.Component.ts
+            // 3th and value is changed using ContentChildren from ngafterviewint() inside the sham.Component.ts
+            }
+      }
+
+}
