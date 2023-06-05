@@ -14,7 +14,7 @@ import { HekkComponent } from './jcb/hl/hekk/hekk.component';
     JcbComponent,
     JcbPipe,
     JcbDirective,
-    HekkComponent
+
   ],
   imports: [
     CommonModule

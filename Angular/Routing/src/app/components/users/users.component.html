@@ -1,0 +1,15 @@
+
+<div  class="container" style=" width: 90%;" >
+
+      <h3>Users : </h3>
+      <ul *ngFor="let i of value" class="list-group" style="margin: 1%;">
+            <!-- we want relative path -->
+            
+            <!-- pass to list from here       -->
+            <app-user-item [user]="i"></app-user-item>
+      </ul>
+</div>
+
+<router-outlet>
+      
+</router-outlet>
