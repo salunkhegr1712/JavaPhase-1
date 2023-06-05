@@ -11,6 +11,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UserItemComponent } from './components/user-item/user-item.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { BlogItemComponent } from './components/blog-item/blog-item.component';
+import { BlogDetailsComponent } from './components/blog-details/blog-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     HeaderComponent,
     FooterComponent,
     UserItemComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    BlogItemComponent,
+    BlogDetailsComponent
   ],
   imports: [
     BrowserModule,
