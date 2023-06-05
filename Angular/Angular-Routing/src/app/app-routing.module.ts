@@ -10,7 +10,8 @@ const routes: Routes = [
   {path:'contact',component:ContactComponent},
   {path:'support',component:SupportComponent},
   // this code for setting home as main 
-  {path:'', redirectTo:'\home',pathMatch:'full'}
+  {path:'', redirectTo:'\home',pathMatch:'full'},
+
 ];
 
 @NgModule({

@@ -7,6 +7,7 @@ import { GhanshamComponent } from './ghansham/ghansham.component';
 import { ContactComponent } from './contact/contact.component';
 import { SupportComponent } from './support/support.component';
 import { HeaderComponent } from './header/header.component';
+import { FootComponent } from './foot/foot.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HeaderComponent } from './header/header.component';
     GhanshamComponent,
     ContactComponent,
     SupportComponent,
-    HeaderComponent
+    HeaderComponent,
+    FootComponent
   ],
   imports: [
     BrowserModule,
