@@ -16,7 +16,7 @@ Meta Character                            	Description
       \D	                     A non-digit, short for [^0-9]
       \s	                     A whitespace character, short for [ tnx0brf]
       \S	                     A non-whitespace character, for short for [^s]
-      \w	                     A word character, short for [a-zA-Z_0-9]
+      \w	                     A word character, short for      
       \W	                     A non-word character [^w]
       \S+	                     Several non-whitespace characters
       \b	                     Matches a word boundary. A word character is [a-zA-Z0-9_] and b matches its bounderies.

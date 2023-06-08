@@ -1,6 +1,5 @@
 // importing basic functionalities from the java library
 import java.lang.*;
-import java.util.*;
 
 
 // you cant use super keyword outside class
@@ -11,6 +10,15 @@ interface Polygon{
 
       int height=20;
       int base=10;
+
+      // the interfaces can have default or static function
+      static void func1(){
+            System.out.println(" this is static class from interface Polygon");
+      }
+
+      default void func2(){
+            System.out.println(" this is default class from interface Polygon");
+      }
 
       // let write some abstract function
       // public is default access specifier inside interface 
@@ -26,12 +34,19 @@ class Rectangle implements Polygon{
 
       // here we are implementing  abstract function from interface
       // also another function 
+      @Override
       public void area(){
             System.out.println("area is : "+(height*base));
       }
 
+      @Override
       public void perimeter(){
             System.out.println("perimeter is : "+(2*(height+base)));
+      }
+
+      // from interface you can Override default function but not static one 
+      public void func2(){
+            System.out.println("default function from interface Polygon is Override by Rectangle class");
       }
 }
 
@@ -43,6 +58,7 @@ interface SecondInterface extends Polygon{
 }
 
 class Hell implements SecondInterface{
+      @Override
       public void displayLength(){
 
       };
