@@ -119,6 +119,23 @@ public class ArrayListInJava {
             // purple
             // cyan
 
+            System.out.println("---- reverse order ---------");
+
+            // printing in reverse order using hasPrevious and previous function of listIterator
+            iterator=arr1.listIterator(arr1.size());
+
+            while(iterator.hasPrevious()){
+                  System.out.println(iterator.previous());
+            }
+
+            // ---- reverse order ---------
+            //       cyan
+            //       purple
+            //       magenta
+            //       gray
+            //       red
+            //       yellow
+
             System.out.println("----------------- other functions------------------------");
 
             // size function used to print the length of list 
