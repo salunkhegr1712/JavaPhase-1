@@ -1,0 +1,164 @@
+# documentation
+https://www.mongodb.com/docs/manual/tutorial/getting-started/
+
+# starting the mongod server in the with following command
+
+┌──(ghansham㉿terminal)-[~]
+└─$ sudo systemctl restart mongod
+[sudo] password for ghansham:
+
+# checking that is MongoDB server is running or not
+
+┌──(ghansham㉿terminal)-[~]
+└─$ sudo systemctl status mongod
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor preset: disabled)
+     Active: active (running) since Fri 2022-08-12 22:27:55 IST; 1min 2s ago
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 9187 (mongod)
+     Memory: 178.2M
+        CPU: 1.102s
+     CGroup: /system.slice/mongod.service
+             └─9187 /usr/bin/mongod --config /etc/mongod.conf
+
+Aug 12 22:27:55 terminal systemd[1]: Started MongoDB Database Server.
+
+# starting mongod shell where you can run all basic to advance commands in the momgod
+
+┌──(ghansham㉿terminal)-[~]
+└─$ mongo
+
+MongoDB shell version v4.2.21
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("81361ca1-e9e3-4cdd-ab51-62193a4e2d67") }
+MongoDB server version: 4.2.21
+Server has startup warnings:
+2022-08-12T22:29:17.383+0530 I  STORAGE  [initandlisten]
+2022-08-12T22:29:17.383+0530 I  STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2022-08-12T22:29:17.383+0530 I  STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2022-08-12T22:29:18.112+0530 I  CONTROL  [initandlisten]
+2022-08-12T22:29:18.112+0530 I  CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2022-08-12T22:29:18.112+0530 I  CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2022-08-12T22:29:18.112+0530 I  CONTROL  [initandlisten]
+2022-08-12T22:29:18.112+0530 I  CONTROL  [initandlisten]
+2022-08-12T22:29:18.112+0530 I  CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+2022-08-12T22:29:18.112+0530 I  CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2022-08-12T22:29:18.112+0530 I  CONTROL  [initandlisten]
+---
+Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+and anyone you share the URL with. MongoDB may use this information to make product
+improvements and to suggest MongoDB products and deployment options to you.
+
+To enable free monitoring, run the following command: db.enableFreeMonitoring()
+To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+# the help command is used in a such a way that when you some command so see documentation or used help command
+
+> help
+	db.help()                    help on db methods
+	db.mycoll.help()             help on collection methods
+	sh.help()                    sharding helpers
+	rs.help()                    replica set helpers
+	help admin                   administrative help
+	help connect                 connecting to a db help
+	help keys                    key shortcuts
+	help misc                    misc things to know
+	help mr                      mapreduce
+
+	show dbs                     show database names
+	show collections             show collections in current database
+	show users                   show users in current database
+	show profile                 show most recent system.profile entries with time >= 1ms
+	show logs                    show the accessible logger names
+	show log [name]              prints out the last segment of log in memory, 'global' is default
+	use <db_name>                set current database
+	db.foo.find()                list objects in collection foo
+	db.foo.find( { a : 1 } )     list objects in foo where a == 1
+	it                           result of the last line evaluated; use to further iterate
+	DBQuery.shellBatchSize = x   set default number of items to display on shell
+	exit                         quit the mongo shell
+
+# show all database in mongodb
+# show dbs only show database which has something
+
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+
+# switch to new database and you dont have to create Database first and then switch and just switch and it get created and inserted at once
+
+> use newDatabase
+switched to db newDatabase
+
+# show current working database
+
+> db
+newDatabase
+
+# exit from shell
+
+> exit
+
+bye
+
+2022-08-12T22:33:37.295+0530 I  NETWORK  [js] trying reconnect to 127.0.0.1:27017 failed
+2022-08-12T22:33:37.295+0530 I  NETWORK  [js] reconnect 127.0.0.1:27017 failed failed
+2022-08-12T22:33:37.296+0530 I  QUERY    [js] Failed to end session { id: UUID("81361ca1-e9e3-4cdd-ab51-62193a4e2d67") } due to SocketException: socket exception [CONNECT_ERROR] server [couldn't connect to server 127.0.0.1:27017, connection attempt failed: SocketException: Error connecting to 127.0.0.1:27017 :: caused by :: Connection refused]
+
+#adding json object insid the mongodb
+
+using insertOne function
+
+syntax:  db.collectionName.insertOne({js object});
+
+> db.movies.insertOne({"name":"ghansham","branch":"CSE"});
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("62f7298e016512cc2432555f")
+}
+
+using insertMany function
+
+syntax:
+
+db.collectionName.insertMany([{json obj 1},{json obj 2}........{json obj n}]);
+
+and you can give collectionName and it will get created automatically
+you have create an array of object and push it them into the collection
+
+> db.movies.insertMany([{"name":"ghansham","branch":"CSE"},{"name":"adesh","branch":"ME"}]);
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("62f723df016512cc2432555b"),
+		ObjectId("62f723df016512cc2432555c")
+	]
+}
+
+# show collection is used in order to show all collection in that perticular database
+
+> show collections
+movies
+
+# read the data from the mongodb database
+
+> db.movies.find()
+{ "_id" : ObjectId("62f723df016512cc2432555b"), "name" : "ghansham", "branch" : "CSE" }
+{ "_id" : ObjectId("62f723df016512cc2432555c"), "name" : "adesh", "branch" : "ME" }
+{ "_id" : ObjectId("62f72872016512cc2432555d"), "name" : "ghansham", "branch" : "CSE" }
+{ "_id" : ObjectId("62f72976016512cc2432555e"), "name" : "ghansham", "branch" : "CSE" }
+{ "_id" : ObjectId("62f7298e016512cc2432555f"), "name" : "ghansham", "branch" : "CSE" }
+
+ each object has own object id "_id" will represent the object id for an object it can be both the user defined or the
+ automatically generated
+
+
+
+# stop mongodb services
+
+┌──(ghansham㉿terminal)-[~]
+└─$ sudo systemctl stop  mongod

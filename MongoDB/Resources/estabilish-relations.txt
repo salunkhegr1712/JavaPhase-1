@@ -1,0 +1,77 @@
+as the  document should be relayted in some of any manner and it should be connected to each another
+so for that we can embed the object in another object
+
+example youre seller of pencils and you have to keep track of the review you get from your clients or customers
+whatever you say
+
+insert it in mongodb
+obj:{
+    objectName:"pencil",
+    price:10,
+    stocks:34,
+    availibility:"yes",
+    reviews:[{
+      cust_name:"ghansham",
+      rating:5,
+      comment:"good product glad i buy it",
+    },
+    {
+      cust_name:"abhi",
+      rating:5,
+      comment:"worth it go for it",
+    },
+    {
+      cust_name:"adesh",
+      rating:5,
+      comment:"Awesome it was great",
+    },
+    {
+      cust_name:"nikhil",
+      rating:4,
+      comment:"good as always",
+    }
+    ]
+}
+
+like this
+> db.shop.insertOne({
+...     objectName:"pencil",
+...     price:10,
+...     stocks:34,
+...     availibility:"yes",
+...     reviews:[{
+...       cust_name:"ghansham",
+...       rating:5,
+...       comment:"good product glad i buy it",
+...     },
+...     {
+...       cust_name:"abhi",
+...       rating:5,
+...       comment:"worth it go for it",
+...     },
+...     {
+...       cust_name:"adesh",
+...       rating:5,
+...       comment:"Awesome it was great",
+...     },
+...     {
+...       cust_name:"nikhil",
+...       rating:4,
+...       comment:"good as always",
+...     }
+...     ]
+... }
+... )
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("62f91b0fd6c9af21e7b94fe2")
+}
+
+>
+> db.shop.find()
+{ "_id" : ObjectId("62f91b0fd6c9af21e7b94fe2"), "objectName" : "pencil", "price" : 10, "stocks" : 34, "availibility" : "yes",
+ "reviews" : [ { "cust_name" : "ghansham", "rating" : 5, "comment" : "good product glad i buy it" },
+  { "cust_name" : "abhi", "rating" : 5, "comment" : "worth it go for it" },
+   { "cust_name" : "adesh", "rating" : 5, "comment" : "Awesome it was great" },
+   { "cust_name" : "nikhil", "rating" : 4, "comment" : "good as always" } ] }
+>
